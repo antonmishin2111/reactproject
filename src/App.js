@@ -1,36 +1,53 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import Grid from '../node_modules/react-bootstrap/lib/Grid';
-import Row from '../node_modules/react-bootstrap/lib/Row';
-import Col from '../node_modules/react-bootstrap/lib/Col';
+import Grid from 'react-bootstrap/lib/Grid';
+import Main from './componets/Main';
+import Header from './componets/Header';
+import Menu from './componets/Menu';
+
 
 import styled from 'styled-components';
 
-const Button = styled.button`
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid palevioletred;
-  color: palevioletred;
-  margin: 0 1em;
-  padding: 0.25em 1em;
+const url = process.env.PUBLIC_URL + '/img/bagraund.png';
+
+const HeaderWrapper = styled.header`
+    width: 100%;
+    background-color:  rgba(36, 36, 36, 0.8);
+`
+const MenuWrapper = styled.div `
+    padding-top: 20px;
+    padding-bottom: 25px;
+`
+
+const MainWrapper = styled.main `
+    padding-top: 130px;
+    padding-bottom: 60px;
+    background: url(${url}) no-repeat center center;
+    background-size: cover;
+    min-height: 600px;
 `
 
 class App extends Component {
   render() {
     return (
-      <Grid className="App">
-        <header className="App-header">
-          <h1>Hello React</h1>
-            <Button href="https://github.com/styled-components/styled-components"
-                    target="_blank"
-                    rel="noopener"
-                    primary>
-                <a href="https://github.com/antonmishin2111/reactproject">Starts</a>
-            </Button>
-        </header>
-      </Grid>
+        <div className="App">
+            <HeaderWrapper>
+                <Grid>
+                    <Header />
+                </Grid>
+            </HeaderWrapper>
+            <MenuWrapper>
+                <Grid>
+                    <Menu />
+                </Grid>
+            </MenuWrapper>
+            <MainWrapper>
+                <Grid>
+                    <Main />
+                </Grid>
+            </MainWrapper>
+        </div>
     );
   }
 }
