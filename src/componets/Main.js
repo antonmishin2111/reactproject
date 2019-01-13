@@ -3,6 +3,8 @@ import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import styled from 'styled-components';
 
+import Slider from './Slider';
+
 
 const Repear = styled.div `
     color:  #ffffff;
@@ -50,7 +52,7 @@ class Main extends React.Component {
                     <CallBtn>Отправить заявку!</CallBtn>
                 </Col>
                 <Col lg={6} lgOffset={1}>
-                    <div>привет</div>
+                    <Slider />
                 </Col>
             </Row>
         )
